@@ -1,7 +1,6 @@
 import React from "react";
 
 const SQCheck = ({sq,handleSQTest}) => {
-        console.log(sq);
         return(
             <div>
                 <h2 className='center'>Please answer the following security question</h2>

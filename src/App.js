@@ -166,7 +166,6 @@ class App extends Component{
      };
      handleSQTest = () => {
          const answer = document.getElementById('inputSQ').value.toLowerCase();
-         console.log(answer);
              fetch('https://salty-crag-84848.herokuapp.com/sqcheck',{
                  method: 'post',
                  headers: {'Content-Type': 'application/json'},
@@ -176,7 +175,7 @@ class App extends Component{
                       })
              }).then(data => data.json())
                  .then(user => {
-                     if (user.id){
+                     if (user.id === this.state.user.id){
                          this.onRouteChange('pwChange');
                      }else{
                          window.alert('Your answer is wrong. Please try again.')
@@ -208,10 +207,7 @@ class App extends Component{
             }
 
         </div>
-)
-}
-
-
+    )}
 }
 
 export default App;
