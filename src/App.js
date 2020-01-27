@@ -14,6 +14,8 @@ import PWChange from "./components/PWChange/PWChange";
 import Particles from "react-particles-js";
 import ChangeSuccess from "./components/ChangeSuccess/ChangeSuccess";
 
+import ReactGA from 'react-ga'; //package for google analytics in react
+
 
 const particlesOptions = {
     "particles": {
@@ -67,6 +69,10 @@ class App extends Component{
             }
         )
     };
+    componentDidMount() {
+        ReactGA.initialize('UA-157015392-4'); //adding google analytics
+        ReactGA.pageview(window.location.pathname + window.location.search); //this tracks all the pages that user visits in this website
+    }
     // componentDidMount() {
     //     fetch('http://localhost:3001/')
     //         .then(response => response.json())
